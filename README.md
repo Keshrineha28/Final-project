@@ -44,12 +44,12 @@ cd Backup
 ```bash
 cd backend
 python -m venv env
-env\Scripts\activate 
-pip install -r requirements.txt
+env\Scripts\activate
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
+You also need to install the packages of Django (like Django, djangorestframework, etc.)
 
 settings.py:
 ```bash
