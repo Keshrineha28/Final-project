@@ -39,36 +39,41 @@ This is a simple full-stack YouTube Clone project built using React for the fron
 
 cd Backup
 
-2. Setup the Backend (Django)
+### 2. Setup the Backend (Django)
+
+```bash
 cd backend
-python -m venv venv
-venv\Scripts\activate  # Or: source venv/bin/activate (Linux/macOS)
+python -m venv env
+env\Scripts\activate 
 pip install -r requirements.txt
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
-
+```
 
 settings.py:
+```bash
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
+```
 
 add this to urls.py:
-
+```bash
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     #  urls here
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
 
+### 3. Setup the Frontend (React)
 
-3. Setup the Frontend (React)
-
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
 frontend runs on http://localhost:5173
 backend runs on http://127.0.0.1:8000
@@ -80,7 +85,9 @@ headers: {
   Authorization: `Bearer <access_token>`
 }
 
-Folder Structure:
+### 4. Folder Structure:
+
+```bash
 Backup/
 ├── backend/
 │   ├── api/
